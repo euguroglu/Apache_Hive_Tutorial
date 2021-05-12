@@ -1,0 +1,25 @@
+Step 1)hdfs dfs -copyFromLocal /home/enes/Applications/Hive/data/assignment_create_table_2018.txt /home/enes/hive/table2.txt
+Step 2)CREATE TABLE IF NOT EXISTS table3
+    (cust_id string, cust_name string, order_date string, ship_date string, courier string, rec_date string, returned_or_not string, returned_date string, reason string)
+    row format delimited
+    fields terminated by ','
+    lines terminated by '\n'
+    stored as textfile
+    tblproperties ("skip.header.line.count"="1");
+
+Step 3) load data inpath '/home/enes/hive/table2.txt' into table table3;
+Step 4) Select * from table3;
+
+Bonus
+
+Step 1) Create another table 
+CREATE TABLE IF NOT EXISTS table4
+    > (cust_id string, cust_name string)
+    >     row format delimited
+    >     fields terminated by ','
+    >     lines terminated by '\n'
+    >     stored as textfile
+    >     tblproperties ("skip.header.line.count"="1");
+Step 2) Load data from table 3 to table 4
+INSERT INTO TABLE table4 select cust_id, cust_name from table3;
+Step 3) Select * from table4
