@@ -1,0 +1,16 @@
+Create Database
+
+CREATE DATABASE IF NOT EXISTS
+d3 with dbproperties('creator'='enes','data'='2017-12-01');
+
+
+Create Managed table
+
+CREATE TABLE IF NOT EXISTS table1 
+(col1 int, col2 array<string>,col3 string, col4 int) 
+row format delimited 
+fields terminated by ',' 
+collection items terminated by ':' 
+lines terminated by '\n' 
+stored as textfile
+LOCATION 'tmp/data/table';
