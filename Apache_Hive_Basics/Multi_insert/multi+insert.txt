@@ -1,3 +1,12 @@
+create table emp_tab (col1 int, col2 string, col3 string, col4 int, col5 int, col6 int, col7 string)
+row format delimited
+fields terminated by ',' 
+lines terminated by '\n' 
+stored as textfile
+
+load data inpath '/home/enes/hive/table3.txt' into table emp_tab;
+
+
 create table developer_tab (id int,name string,desg string) stored as textfile;
 
 create table manager_tab (id int,name string,desg string) stored as textfile;
