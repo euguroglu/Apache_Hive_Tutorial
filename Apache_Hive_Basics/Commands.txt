@@ -14,3 +14,11 @@ collection items terminated by ':'
 lines terminated by '\n' 
 stored as textfile
 LOCATION 'tmp/data/table';
+
+Append data into hive table
+
+load data inpath '/home/enes/hive/table1.txt' into table table1;
+
+Overwrite data into hive table
+
+load data inpath '/home/enes/hive/table1.txt' overwrite table table1;
