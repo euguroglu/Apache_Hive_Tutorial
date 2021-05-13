@@ -1,0 +1,26 @@
+STEP 1)
+
+CREATE TABLE IF NOT EXISTS table5
+(id string, product string, buyprice int, sellprice int, buy int, sell int, year int)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE
+tblproperties ("skip.header.line.count"="1");
+
+STEP 2)
+
+LOAD DATA inpath '/home/enes/hive/table3.txt' into table table5;
+
+STEP 3)
+
+select round(buy/buyprice,2) as buy_rate from table5 order by buy_rate desc limit 1;
+
+STEP 4)
+
+select round(avg(sell/sellprice),2) as avg_sell_rate from table5;
+
+STEP 5)
+
+select round(avg(buy/buyprice),2) as avg_buy_rate from table5;
+
