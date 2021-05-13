@@ -7,7 +7,7 @@ stored as textfile
 load data inpath '/home/enes/hive/table3.txt' into table emp_tab;
 
 
-create table developer_tab (id int,name string,desg string) stored as textfile;
+s
 
 create table manager_tab (id int,name string,desg string) stored as textfile;
 
