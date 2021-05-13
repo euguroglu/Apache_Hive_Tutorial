@@ -1,0 +1,35 @@
+Step 1) Static partition
+
+create table if not exists table_part
+    > (id string, buyprice int, sellprice int, buy int, sell int, year int)
+    > partitioned by (product string)
+    > row format delimited
+    > fields terminated by ','
+    > lines terminated by '\n'
+    > stored as textfile;
+
+Step 2)
+
+insert into table table_part
+    > partition (product = 'Soap')
+    > select id, buyprice, sellprice, buy, sell, year from table5 where product='Soap';
+
+Step 3) Dynamic partition
+
+create table if not exists table_part_dynamic
+    > (id string, buyprice int, sellprice int, buy int, sell int, year int)
+    > partitioned by (product string)
+    > row format delimited
+    > fields terminated by ','
+    > lines terminated by '\n'
+    > stored as textfile;
+
+Step 4)
+
+SET hive.exec.dynamic.partition=true;
+SET hive.exec.dynamic.partition.mode=nonstrict;
+
+Step 5)
+
+insert into table table_part_dynamic partition (product)
+    > select id, buyprice, sellprice, buy, sell , year, product from table5;
