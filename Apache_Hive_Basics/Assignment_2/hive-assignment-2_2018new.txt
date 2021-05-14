@@ -1,4 +1,4 @@
-#ID,#product,#buyprice,#sellprice,#units_purchsed,#units_sold,year
+#id,#product,#buyprice,#sellprice,#buy,#sell,year
 RNMM302671MC,Oil,3,20,613,452,2002
 UFBG160794BK,Face_Wash,5,21,755,471,2001
 RIEQ544903EP,Soap,4,18,742,492,2009
