@@ -5,4 +5,4 @@ for line in sys.stdin:
     first = line[0]
     upper = first.upper()
     new_line = upper+line[1:]
-    print new_line
+    print(new_line)
