@@ -4,4 +4,4 @@ def capitalize(input):
 
 for line in sys.stdin:
    line = line.strip()
-   print capitalize(line)
+   print(capitalize(line))
