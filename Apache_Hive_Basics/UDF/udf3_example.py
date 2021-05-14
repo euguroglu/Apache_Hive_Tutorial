@@ -1,13 +1,16 @@
 import sys
-import string
 
+col = []
 while True:
     line = sys.stdin.readline()
     if not line:
         break
 
-    line = string.strip(line, '\n ')
-    line = string.split(line, '\t')
-    line = line.upper()
+    line = line.strip('\n ')
+    print(line)
+    line = line.split('\t')
+    print(line)
+    for i in range(len(line)):
+        col.append(line[i].upper())
 
-    print line
+    print(col)
