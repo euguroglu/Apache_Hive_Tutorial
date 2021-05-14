@@ -2,6 +2,7 @@ import sys
 
 try:
     for line in sys.stdin:
+        line = str(line)
         line = line.strip()
         first = line[0]
         upper = first.upper()
