@@ -7,6 +7,7 @@ while True:
         break
 
     line = string.strip(line, '\n ')
+    line = string.split(line, '\t')
     line = line.upper()
 
     print line
