@@ -1,0 +1,4 @@
+select a.col1, a.col2, b.col2 from 
+(select * from table_par_2 where col4=2012)a join 
+(select * from table_par_1 where col2='e')b
+ on (a.col1=b.col1);
